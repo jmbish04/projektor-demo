@@ -53,5 +53,25 @@
 		// Invite-only by default: only ADMIN_EMAILS become owners; everyone else that
 		// Cloudflare Access admits must be invited. To auto-join admitted users, add
 		// AUTO_JOIN_ROLE = "viewer" (or member/admin).
-	}
+	},
+	"secrets_store_secrets": [
+		{
+			"binding": "WORKER_API_KEY",
+			"store_id": "8c42fa70938644e0a8a109744467375f",
+			"secret_name": "WORKER_API_KEY"
+		},
+		{
+			"binding": "CLOUDFLARE_ACCOUNT_ID",
+			"store_id": "8c42fa70938644e0a8a109744467375f",
+			"secret_name": "CLOUDFLARE_ACCOUNT_ID"
+		}
+	],
+	"services": [
+		{
+			"binding": "CORE_GUARDIAN",
+			"service": "core-guardian",
+			"entrypoint": "GuardianRpc",
+			"remote": true
+		}
+	]
 }
